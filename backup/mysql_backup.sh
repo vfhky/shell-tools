@@ -1,7 +1,7 @@
 #!/bin/bash
 # MySQL Backup Script v1.0.0
 # (c) 2015 vfhky https://typecodes.com
-# https://github.com/vfhky/shell-tools/backup/mysql_backup.sh
+# https://github.com/vfhky/shell-tools/blob/master/backup/mysql_backup.sh
 
 # Space separated list of databases
 DBLIST="vfhkytpvfhky"
