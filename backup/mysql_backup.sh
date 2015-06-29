@@ -6,7 +6,7 @@
 # https://coding.net/u/vfhky/p/shell-tools/git/blob/master/backup/mysql_backup.sh
 
 # Space separated list of databases
-DBLIST="vfhkytpvfhky"
+DBLIST="your mysql database name witch you want to backup"
 
 # Backup to this directory
 BACKUPDIR=/mydata/backups/data/mysql
