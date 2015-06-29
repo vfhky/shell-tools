@@ -1,6 +1,7 @@
 #!/bin/bash
 # MySQL Backup Script v1.0.0
 # (c) 2015 vfhky https://typecodes.com/linux/centos7mysqlregularbackup.html
+# Reference: https://github.com/chekolyn/bash-scripts/blob/master/mysql-dbs-backup.sh
 # https://github.com/vfhky/shell-tools/blob/master/backup/mysql_backup.sh
 # https://coding.net/u/vfhky/p/shell-tools/git/blob/master/backup/mysql_backup.sh
 
@@ -13,7 +14,7 @@ BACKUPDIR=/mydata/backups/data/mysql
 # Number of days to keep
 NUMDAYS=60
 
-# Put client credentials into $HOME/.my.cnf
+# Some linux command and your mysql configure
 FINDCMD="find"
 MYSQLCMD="mysql"
 MyUSER="your mysql user name"                   # USERNAME
