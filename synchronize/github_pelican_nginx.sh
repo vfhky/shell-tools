@@ -1,6 +1,7 @@
 #!/bin/bash
 # FileName:		 github_pelican_nginx.sh
 # Description:	 Synchronize markdown articles with github, convert to html files using Pelican, deliver it to nginx environment.
+# Simple Usage:	 ./github_pelican_nginx.sh commit_comments
 # Crontab Usage: 00 01 * * * /mydata/backups/bak_list/github_pelican_nginx.sh >/dev/null 2>&1
 # (c) 2016 vfhky https://typecodes.com/linux/githubpelicanpublishshell.html
 # https://github.com/vfhky/shell-tools/blob/master/synchronize/github_pelican_nginx.sh
@@ -20,6 +21,7 @@ GITHUB_PELICAN_DIR=/mydata/GitBang/GitHub/BlogBak
 PELICAN_TAR_DIR=/usr/share/nginx/html/pelican_content_bak
 PELICAN_BLOG_DIR=/usr/share/nginx/html/pelican
 BLOG_PUBLISH_LOG_DIR=/mydata/backups/logs/blogpublish
+GITHUB_PERSONAL_PAGE=/mydata/GitBang/GitHub/vfhky.github.io
 # Articles int 15 minutes are legal.
 TIME_GAP=15
 
@@ -30,27 +32,40 @@ TIME_GAP=15
 PRGNAME="github_pelican_nginx"
 
 # Current date format: e.g 20150505_2015.
-Current_Date=`date +%Y%m%d_%H%M`
+Current_Date=$(date +%Y%m%d_%H%M)
+
+# Check if current user is root.
+[ "$(id -u)" != "0" ] && echo "Error: You must be root to run this script." && exit 1
 
 
 # Run command functions.
 function ERROR() {
-	echo >/dev/null && echo "[`date +%H:%M:%S:%N`][error] $@" >> ${BLOG_PUBLISH_LOG_DIR}/${Current_Date}.log
+	echo >/dev/null && echo "[$(date +%Y%m%d_%H%M)][error] $*" >> ${BLOG_PUBLISH_LOG_DIR}/${Current_Date}.log
 	exit 1
 }
 
 function NOTICE() {
-	echo >/dev/null && echo "[`date +%H:%M:%S:%N`][notice] $@" >> ${BLOG_PUBLISH_LOG_DIR}/${Current_Date}.log
+	echo >/dev/null && echo "[$(date +%Y%m%d_%H%M)][notice] $*" >> ${BLOG_PUBLISH_LOG_DIR}/${Current_Date}.log
 }
 
 function RUNCMD() {
-	echo "[`date +%H:%M:%S:%N`][notice] $@" >> ${BLOG_PUBLISH_LOG_DIR}/${Current_Date}.log
+	echo "[$(date +%Y%m%d_%H%M)][notice] $*" >> ${BLOG_PUBLISH_LOG_DIR}/${Current_Date}.log
 	eval $@
 }
 
 # Git pull command function.
 function Git_Pull(){
   	RUNCMD "git pull origin master >/dev/null"
+}
+
+# Git commit command function.
+function Git_Commit(){
+  if [ $# -ne 1 ]; then
+  	ERROR "Usage: Git_Commit commit_comments!"
+  	exit 1;
+  else
+  	RUNCMD git pull && git add --all && git commit -m "$1" && git push origin master
+  fi
 }
 
 # Get the path of markdown articles in TIME_GAP minutes.
@@ -87,7 +102,7 @@ do
 		echo "No articles, nothing to do."
 		ERROR "No articles, nothing to do."
 	fi
-	FILE_PATH=`dirname ${PELICAN_COMPILE_DIR}/content/articles/"${New_Article_Files:2}"`
+	FILE_PATH=$(dirname ${PELICAN_COMPILE_DIR}/content/articles/"${New_Article_Files:2}")
 	RUNCMD "mkdir -p ${FILE_PATH} && ${CPCMD} \"${New_Article_File}\" ${FILE_PATH}"
 done
 
@@ -117,7 +132,7 @@ fi
 
 
 NOTICE "[5]Start unpack the target files."
-RUNCMD "cd ${PELICAN_TAR_DIR} && ${CPCMD} ${Current_Date}.tar.gz ${PELICAN_BLOG_DIR} && cd ${PELICAN_BLOG_DIR} && ${TARXCMD} ${Current_Date}.tar.gz && ${RMCMD} ${Current_Date}.tar.gz"
+RUNCMD "${CPCMD} ${PELICAN_TAR_DIR}/${Current_Date}.tar.gz ${PELICAN_BLOG_DIR} && cd ${PELICAN_BLOG_DIR} && ${TARXCMD} ${Current_Date}.tar.gz && ${RMCMD} ${Current_Date}.tar.gz"
 
 RC=$?
 if [ $RC -gt 0 ]; then
@@ -125,5 +140,34 @@ if [ $RC -gt 0 ]; then
 fi
 
 
-NOTICE "[6]Publish end."
+if [ -n $1 ]; then
+	echo "You're going to synchronize your weibsite to the homepage on github.com."
+	NOTICE "[6]Start copy the packgage to the local homepage bang cloned from remote in GitHub."
+	RUNCMD "${CPCMD} ${PELICAN_TAR_DIR}/${Current_Date}.tar.gz ${GITHUB_PERSONAL_PAGE} && cd ${GITHUB_PERSONAL_PAGE} && ${TARXCMD} ${Current_Date}.tar.gz && ${RMCMD} ${Current_Date}.tar.gz"
+	
+	RC=$?
+	if [ $RC -gt 0 ]; then
+		ERROR "Copy the packgage to the local homepage bang failed!"
+	fi
+	
+	NOTICE "[7]Start synchronize website to my homepage on GitHub."
+	# read -p "Please input your comments on this commitment: " COMMIT_COMMENTS
+	# while [[ -z "${COMMIT_COMMENTS}" ]]
+	# do
+	# 	read -p "Comments can not be empty.Please input again: " COMMIT_COMMENTS
+	# done
+	# RUNCMD "Git_Commit ${COMMIT_COMMENTS}"
+	RUNCMD "Git_Commit $1"
+	
+	RC=$?
+	if [ $RC -gt 0 ]; then
+		ERROR "Synchronize website to GitHub failed!"
+	fi
+else
+	echo "Not synchronize your weibsite to the homepage on github.com."
+	NOTICE "[6]Not synchronize your weibsite to the homepage on github.com."
+fi
+
+
+NOTICE "------END------"
 exit 0
