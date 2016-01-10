@@ -45,7 +45,7 @@ Current_Date=$(date +%Y%m%d_%H%M)
 # Check parameter.
 if [ $# -gt 1 ]; then
 	echo "Usage:	./github_pelican_nginx.sh \"commit_comments\"" && exit 1
-
+fi
 
 # Run command functions.
 function ERROR() {
