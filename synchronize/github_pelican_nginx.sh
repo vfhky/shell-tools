@@ -43,8 +43,8 @@ Current_Date=$(date +%Y%m%d_%H%M)
 [ "$(id -u)" != "0" ] && echo "Error: You must be root to run this script." && exit 1
 
 # Check parameter.
-# if [ $# -ne 0 -a $# -ne 1 ]; then
-# 	echo "Usage:	./github_pelican_nginx.sh commit_comments" && exit 1
+if [ $# -gt 1 ]; then
+	echo "Usage:	./github_pelican_nginx.sh \"commit_comments\"" && exit 1
 
 
 # Run command functions.
@@ -148,8 +148,8 @@ if [ $RC -gt 0 ]; then
 	ERROR "Unpack the target files failed!"
 fi
 
-
-if [ -n $1 ]; then
+# if [ $# -eq 1 ]; then
+if [ -n "$1" ]; then
 	echo "You're going to synchronize your weibsite to the homepage on github.com."
 	NOTICE "[6]Start copy the packgage to the local homepage bang cloned from remote in GitHub."
 	RUNCMD "${CPCMD} ${PELICAN_TAR_DIR}/${Current_Date}.tar.gz ${GITHUB_PERSONAL_PAGE} && cd ${GITHUB_PERSONAL_PAGE} && ${TARXCMD} ${Current_Date}.tar.gz && ${RMCMD} ${Current_Date}.tar.gz"
