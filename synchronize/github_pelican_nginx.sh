@@ -165,8 +165,8 @@ if [ -n "$1" ]; then
 	# do
 	# 	read -p "Comments can not be empty.Please input again: " COMMIT_COMMENTS
 	# done
-	# RUNCMD "Git_Commit ${COMMIT_COMMENTS}"
-	RUNCMD "Git_Commit $1"
+	# RUNCMD "Git_Commit \"${COMMIT_COMMENTS}\""
+	RUNCMD "Git_Commit \"$1\""
 	
 	RC=$?
 	if [ $RC -gt 0 ]; then
