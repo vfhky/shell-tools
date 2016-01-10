@@ -24,7 +24,7 @@ DUMPCMD="mysqldump -u$MyUSER -h $MyHOST -p$MyPASS --lock-tables --databases "
 GZIPCMD="gzip"
 
 # Backup date format,e.g 20150505_2010
-BACKUPDATE=`date +%Y%m%d_%H%M`
+BACKUPDATE=$(date +%Y%m%d_%H%M)
 
 function USAGE() {
 cat << EOF

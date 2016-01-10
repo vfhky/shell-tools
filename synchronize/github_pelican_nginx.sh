@@ -15,14 +15,19 @@ RMCMD="\rm -rf"
 TARXCMD="tar -zxf"
 TARZIPCMD="tar --warning=no-file-changed -zcf"
 
-# Basic variables.
+# Pelican compile markdown files to html.
 PELICAN_COMPILE_DIR=/mydata/GitBang/pelican
+# Private bang in github for store your markdown files.
 GITHUB_PELICAN_DIR=/mydata/GitBang/GitHub/BlogBak
+# Backup dir for your website's version management.
 PELICAN_TAR_DIR=/usr/share/nginx/html/pelican_content_bak
+# Dir of your website in nginx server.
 PELICAN_BLOG_DIR=/usr/share/nginx/html/pelican
+# Dir for this shell script to generate logs automatically.
 BLOG_PUBLISH_LOG_DIR=/mydata/backups/logs/blogpublish
+# Your personal homepage in github.
 GITHUB_PERSONAL_PAGE=/mydata/GitBang/GitHub/vfhky.github.io
-# Articles int 15 minutes are legal.
+# Articles in 15 minutes are legal.
 TIME_GAP=15
 
 # Get the newest file name.
@@ -36,6 +41,10 @@ Current_Date=$(date +%Y%m%d_%H%M)
 
 # Check if current user is root.
 [ "$(id -u)" != "0" ] && echo "Error: You must be root to run this script." && exit 1
+
+# Check parameter.
+# if [ $# -ne 0 -a $# -ne 1 ]; then
+# 	echo "Usage:	./github_pelican_nginx.sh commit_comments" && exit 1
 
 
 # Run command functions.
