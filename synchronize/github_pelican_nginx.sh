@@ -49,16 +49,16 @@ fi
 
 # Run command functions.
 function ERROR() {
-	echo >/dev/null && echo "[$(date +%Y%m%d_%H%M)][error] $*" >> ${BLOG_PUBLISH_LOG_DIR}/${Current_Date}.log
+	echo >/dev/null && echo "[$(date +%H:%M:%S:%N)][error] $*" >> ${BLOG_PUBLISH_LOG_DIR}/${Current_Date}.log
 	exit 1
 }
 
 function NOTICE() {
-	echo >/dev/null && echo "[$(date +%Y%m%d_%H%M)][notice] $*" >> ${BLOG_PUBLISH_LOG_DIR}/${Current_Date}.log
+	echo >/dev/null && echo "[$(date +%H:%M:%S:%N)][notice] $*" >> ${BLOG_PUBLISH_LOG_DIR}/${Current_Date}.log
 }
 
 function RUNCMD() {
-	echo "[$(date +%Y%m%d_%H%M)][notice] $*" >> ${BLOG_PUBLISH_LOG_DIR}/${Current_Date}.log
+	echo "[$(date +%H:%M:%S:%N)][notice] $*" >> ${BLOG_PUBLISH_LOG_DIR}/${Current_Date}.log
 	eval $@
 }
 
