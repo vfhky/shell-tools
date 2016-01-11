@@ -69,12 +69,12 @@ function Git_Pull(){
 
 # Git commit command function.
 function Git_Commit(){
-  if [ $# -ne 1 ]; then
-  	ERROR "Usage: Git_Commit commit_comments!"
-  	exit 1;
-  else
-  	RUNCMD git pull && git add --all && git commit -m "$1" && git push origin master
-  fi
+	if [ $# -ne 1 ]; then
+		ERROR "Usage: Git_Commit commit_comments!"
+		exit 1;
+	else
+		RUNCMD "git pull && git add --all && git commit -m \"$1\" && git push origin master"
+	fi
 }
 
 # Get the path of markdown articles in TIME_GAP minutes.
