@@ -3,7 +3,7 @@
 # Description:	 Synchronize markdown articles with github, convert to html files using Pelican, deliver it to nginx environment.
 # Simple Usage:	 ./github_pelican_nginx.sh "commit_comments"
 # Crontab Usage: 00 01 * * * /mydata/backups/bak_list/github_pelican_nginx.sh >/dev/null 2>&1
-# (c) 2016 vfhky https://typecodes.com/linux/githubpelicanpublishshell.html
+# (c) 2016 vfhky https://typecodes.com/linux/syngithubmarkdownpelican.html
 # https://github.com/vfhky/shell-tools/blob/master/synchronize/github_pelican_nginx.sh
 
 
