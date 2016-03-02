@@ -78,9 +78,9 @@ function Git_Commit(){
 }
 
 # Get the path of markdown articles in TIME_GAP minutes.
-function Get_Files_Path(){
-  	RUNCMD "${FINDCMD} . -mmin -${TIME_GAP} -type f -name \"*.md\" -print0"
-}
+# function Get_Files_Path(){
+#  	 RUNCMD "${FINDCMD} . -mmin -${TIME_GAP} -type f -name \"*.md\" -print0"
+# }
 
 # Lock down permissions.You should be careful when it comes to your website for the permission of files, but it's safe using 022.
 # umask 022
@@ -102,16 +102,22 @@ if [ $RC -gt 0 ]; then
 fi
 
 
+#### Method 1:Chang the IFS to del with the blank word in the filename.
+#old_IFS=$IFS
+#IFS=$(echo -en "\n\b")
+
 NOTICE "[2]Start copy the pulled articles to the compile dir of PELICAN."
-New_Article_Files=$(Get_Files_Path ${GITHUB_PELICAN_DIR}/md_article)
+# New_Article_Files=$(Get_Files_Path ${GITHUB_PELICAN_DIR}/md_article)
 # You should not delete the double quotation marks in case of existing a blank in the file path.
-for New_Article_File in "${New_Article_Files}"
+#### Method 1: for New_Article_File in `${FINDCMD} . -mmin -${TIME_GAP} -type f -name "*.md"`
+#### Method 2: use the while recycle.
+${FINDCMD} . -mmin -${TIME_GAP} -type f -name "*.md"|while read New_Article_File
 do
 	if [ -z "${New_Article_File}" ]; then
 		echo "No articles, nothing to do."
 		ERROR "No articles, nothing to do."
 	fi
-	FILE_PATH=$(dirname ${PELICAN_COMPILE_DIR}/content/articles/"${New_Article_Files:2}")
+	FILE_PATH=$(dirname ${PELICAN_COMPILE_DIR}/content/articles/"${New_Article_File:2}")
 	RUNCMD "mkdir -p ${FILE_PATH} && ${CPCMD} \"${New_Article_File}\" ${FILE_PATH}"
 done
 
@@ -132,7 +138,7 @@ fi
 
 NOTICE "[4]Start generate a tar packgage and move it to the backup dir."
 # The command of tar cause the problem that file changed as we read with the value 1, so we should ignore it using OR logic.
-RUNCMD "cd ${PELICAN_COMPILE_DIR}/output && ${TARZIPCMD} ${Current_Date}.tar.gz . || ${MVCMD} ${Current_Date}.tar.gz ${PELICAN_TAR_DIR}"
+RUNCMD "cd ${PELICAN_COMPILE_DIR}/output && ${TARZIPCMD} ${Current_Date}.tar.gz . || ${MVCMD} ${Current_Date}.tar.gz ${PELICAN_BLOG_DIR}"
 
 RC=$?
 if [ $RC -gt 0 ]; then
@@ -141,7 +147,7 @@ fi
 
 
 NOTICE "[5]Start unpack the target files."
-RUNCMD "${CPCMD} ${PELICAN_TAR_DIR}/${Current_Date}.tar.gz ${PELICAN_BLOG_DIR} && cd ${PELICAN_BLOG_DIR} && ${TARXCMD} ${Current_Date}.tar.gz && ${RMCMD} ${Current_Date}.tar.gz"
+RUNCMD "cd ${PELICAN_BLOG_DIR} && ${TARXCMD} ${Current_Date}.tar.gz && ${MVCMD} ${Current_Date}.tar.gz ${PELICAN_TAR_DIR}"
 
 RC=$?
 if [ $RC -gt 0 ]; then
@@ -150,7 +156,7 @@ fi
 
 # if [ $# -eq 1 ]; then
 if [ -n "$1" ]; then
-	echo "You're going to synchronize your weibsite to the homepage on github.com."
+	echo "Ready to synchronize to the homepage on github.com."
 	NOTICE "[6]Start copy the packgage to the local homepage bang cloned from remote in GitHub."
 	RUNCMD "${CPCMD} ${PELICAN_TAR_DIR}/${Current_Date}.tar.gz ${GITHUB_PERSONAL_PAGE} && cd ${GITHUB_PERSONAL_PAGE} && ${TARXCMD} ${Current_Date}.tar.gz && ${RMCMD} ${Current_Date}.tar.gz"
 	
