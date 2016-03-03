@@ -121,6 +121,9 @@ do
 	RUNCMD "mkdir -p ${FILE_PATH} && ${CPCMD} \"${New_Article_File}\" ${FILE_PATH}"
 done
 
+#### Method 1:Recovery the IFS setting.
+#IFS=${old_IFS}
+
 RC=$?
 if [ $RC -gt 0 ]; then
 	ERROR "Copy the pulled articles failed!"
