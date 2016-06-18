@@ -15,7 +15,11 @@
 3. typecodes_backup.sh：[《2015博客升级记(八)：CentOS7定时备份博客程序的shell脚本》](https://typecodes.com/linux/centos7blogregularbackup.html '查看原文')
 
 
-
 ### 2.2 synchronize目录
 
 1. github_pelican_nginx.sh：[《同步GitHub Markdown文章到Linux服务器后更新Pelican博客的脚本》](https://typecodes.com/linux/syngithubmarkdownpelican.html '查看原文')
+
+
+### 2.3 filehandle目录
+
+1. handle_makefile.sh：[《使用sed命令批量处理Makefile文件的脚本》](https://typecodes.com/linux/modifyfilebysed.html '查看原文')
