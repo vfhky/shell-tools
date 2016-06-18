@@ -22,4 +22,4 @@
 
 ### 2.3 filehandle目录
 
-1. handle_makefile.sh：[《使用sed命令批量处理Makefile文件的脚本》](https://typecodes.com/linux/modifyfilebysed.html '查看原文')
+1. handle_makefile.sh：[《使用sed命令批量处理Makefile文件的脚本》](https://typecodes.com/linux/modimakefilebysed.html '查看原文')
