@@ -2,7 +2,7 @@
 # FileName:      handle_makefile.sh
 # Description:   Simple usage of sed command to modify many Makefiles in batch processing.
 # Simple Usage:  ./handle_makefile.sh
-# (c) 2016 vfhky https://typecodes.com/linux/modifyfilebysed.html
+# (c) 2016 vfhky https://typecodes.com/linux/modimakefilebysed.html
 # https://github.com/vfhky/shell-tools/blob/master/filehandle/handle_makefile.sh
 
 
