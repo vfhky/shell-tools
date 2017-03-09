@@ -23,4 +23,5 @@
 ### 2.3 filehandle目录
 
 1. handle_makefile.sh：[《使用sed命令批量处理Makefile文件的脚本》](https://typecodes.com/linux/handlemakefilebysed.html '查看原文')
-2. sedawkfindreplace1.sh：[《使用sed和awk查找和替换字符串处理Makefile文件》](https://typecodes.com/linux/sedawkfindreplace1.html '查看原文')
+2. sedawkfindreplace1.sh：[《使用sed和awk查找和替换字符串处理Makefile文件（一）》](https://typecodes.com/linux/sedawkfindreplace1.html '查看原文')
+3. sedawkfindreplace2.sh：[《使用sed和awk查找和替换字符串处理Makefile文件（二）》](https://typecodes.com/linux/sedawkfindreplace2.html '查看原文')
