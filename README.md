@@ -26,3 +26,8 @@
 2. sedawkfindreplace1.sh：[《使用sed和awk查找和替换字符串处理Makefile文件（一）》](https://typecodes.com/linux/sedawkfindreplace1.html '查看原文')
 3. sedawkfindreplace2.sh：[《使用sed和awk查找和替换字符串处理Makefile文件（二）》](https://typecodes.com/linux/sedawkfindreplace2.html '查看原文')
 4. sedawkfindreplace3.sh：[《使用sed和awk查找和替换字符串处理Makefile文件（三）》](https://typecodes.com/linux/sedawkfindreplace3.html '使用sed和awk查找和替换字符串处理Makefile文件（三）')。
+
+
+### 2.4 datehandle目录
+
+1. alldateduringtwodays1.sh：[《遍历输出两个日期范围内所有日期的shell脚本》](https://typecodes.com/linux/alldateduringtwodays1.html '查看原文')
