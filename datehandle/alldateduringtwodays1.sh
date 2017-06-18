@@ -1,5 +1,5 @@
 #!/bin/bash
-# FileName:      sedawkfindreplace1.sh
+# FileName:      alldateduringtwodays1.sh
 # Description:   Print all the date during the two days you inpute.
 # Simple Usage:  ./alldateduringtwodays1.sh
 # (c) 2017.6.15 vfhky https://typecodes.com/linux/alldateduringtwodays1.html
