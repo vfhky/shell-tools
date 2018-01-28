@@ -29,6 +29,7 @@
 
 | 日期        | 脚本文件           | 说明文档  |
 | :----: | :----: | :----: |
+| 2018-01-28 | python3caseyumbug2.sh      |    [《修复CentOS7升级Python到3.6版本后yum不能使用的问题（续）》](https://typecodes.com/linux/python3caseyumbug2.html '修复CentOS7升级Python到3.6版本后yum不能使用的问题（续）') |
 | 2017-11-12 | encoding_convert.sh      |    [《SHELL SCRIPT FOR RECURSIVELY CONVERTING FILES, THAT ARE SAVED IN ANY CHARSET, INTO UTF-8.》](https://www.lexo.ch/blog/2013/01/linux-bash-shell-script-for-recursively-converting-all-files-with-various-charsets-in-a-directory-into-utf-8-shell-skript-fur-das-rekursive-konvertieren-von-allen-files-in-einem-verzeichnis-mit-belie/ '将指定目录下的所有非utf-8格式的指定后缀的文件全部转换成utf-8') |
 | 2017-05-22 | sedawkfindreplace3.sh      |    [《使用sed和awk查找和替换字符串处理Makefile文件（三）》](https://typecodes.com/linux/sedawkfindreplace3.html '使用sed和awk查找和替换字符串处理Makefile文件（三）') |
 | 2017-03-09 | sedawkfindreplace2.sh      |    [《使用sed和awk查找和替换字符串处理Makefile文件（二）》](https://typecodes.com/linux/sedawkfindreplace2.html '查看原文') |
