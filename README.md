@@ -3,7 +3,7 @@
 
 
 ## 1 描述
-自己写的或者整理收集的Linux Shell Script，并已在CentOS7.1服务器下测试通过。
+自己写的或者整理收集的Linux Shell/Python Scripts，并已在CentOS 7.4服务器下测试通过。
 
 ## 2 版本更新说明
 整个目录如下：
@@ -17,15 +17,21 @@
 | 2015-06-29      | mysql_backup.sh | [《2015博客升级记(七)：CentOS7定时备份MySql的shell脚本》](https://typecodes.com/linux/centos7mysqlregularbackup.html '查看原文') |
 
 
-### 2.2 synchronize目录
+### 2.2 datehandle目录
 
 | 日期        | 脚本文件           | 说明文档  |
 | :----: | :----: | :----: |
-| 2017-10-07      | codingnet_pelican_nginx.sh | 同步Coding.net Markdown文章到Linux服务器后更新Pelican博客的脚本 |
-| 2016-01-10      | github_pelican_nginx.sh | [《同步GitHub Markdown文章到Linux服务器后更新Pelican博客的脚本》](https://typecodes.com/linux/syngithubmarkdownpelican.html '查看原文') |
+| 2017-06-15      | alldateduringtwodays1.sh | [《shell遍历输出两个日期范围内所有的日期》](https://typecodes.com/linux/alldateduringtwodays1.html '查看原文') |
 
 
-### 2.3 filehandle目录
+### 2.3 dns目录
+
+| 日期        | 脚本文件           | 说明文档  |
+| :----: | :----: | :----: |
+| 2019-06-01      | aliyun_dns_modify.py | [《脚本自动切换博客图片域名在阿里云的DNS解析》](https://typecodes.com/python/aliyundnsanalysis1.html '查看原文') |
+
+
+### 2.4 filehandle目录
 
 | 日期        | 脚本文件           | 说明文档  |
 | :----: | :----: | :----: |
@@ -37,8 +43,9 @@
 | 2016-06-18      | handle_makefile.sh | [《使用sed命令批量处理Makefile文件的脚本》](https://typecodes.com/linux/handlemakefilebysed.html '查看原文') |
 
 
-### 2.4 datehandle目录
+### 2.5 synchronize目录
 
 | 日期        | 脚本文件           | 说明文档  |
 | :----: | :----: | :----: |
-| 2017-06-15      | alldateduringtwodays1.sh | [《shell遍历输出两个日期范围内所有的日期》](https://typecodes.com/linux/alldateduringtwodays1.html '查看原文') |
+| 2017-10-07      | codingnet_pelican_nginx.sh | 同步Coding.net Markdown文章到Linux服务器后更新Pelican博客的脚本 |
+| 2016-01-10      | github_pelican_nginx.sh | [《同步GitHub Markdown文章到Linux服务器后更新Pelican博客的脚本》](https://typecodes.com/linux/syngithubmarkdownpelican.html '查看原文') |
