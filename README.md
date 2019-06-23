@@ -35,6 +35,7 @@
 
 | 日期        | 脚本文件           | 说明文档  |
 | :----: | :----: | :----: |
+| 2019-06-23 | qiniu_letssl.py      |    [《Python脚本上传博客自定义的SSL证书到七牛云》](https://typecodes.com/python/qiniuletssl1.html 'Python脚本上传博客自定义的SSL证书到七牛云') |
 | 2018-02-07 | navicatxportoverflow1.sh      |    [《使用shell脚本解决Navicat导出excel数据不全的问题》](https://typecodes.com/linux/navicatxportoverflow1.html '使用shell脚本解决Navicat导出excel数据不全的问题') |
 | 2018-01-28 | python3caseyumbug2.sh      |    [《修复CentOS7升级Python到3.6版本后yum不能使用的问题（续）》](https://typecodes.com/linux/python3caseyumbug2.html '修复CentOS7升级Python到3.6版本后yum不能使用的问题（续）') |
 | 2017-11-12 | encoding_convert.sh      |    [《SHELL SCRIPT FOR RECURSIVELY CONVERTING FILES, THAT ARE SAVED IN ANY CHARSET, INTO UTF-8.》](https://www.lexo.ch/blog/2013/01/linux-bash-shell-script-for-recursively-converting-all-files-with-various-charsets-in-a-directory-into-utf-8-shell-skript-fur-das-rekursive-konvertieren-von-allen-files-in-einem-verzeichnis-mit-belie/ '将指定目录下的所有非utf-8格式的指定后缀的文件全部转换成utf-8') |
