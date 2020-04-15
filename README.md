@@ -45,7 +45,14 @@
 | 2016-06-18      | handle_makefile.sh | [《使用sed命令批量处理Makefile文件的脚本》](https://typecodes.com/linux/handlemakefilebysed.html '查看原文') |
 
 
-### 2.5 synchronize目录
+### 2.5 mysql目录
+
+| 日期        | 脚本文件           | 说明文档  |
+| :----: | :----: | :----: |
+| 2020-04-15      | batchinsertmysqlshell1.sh | [《使用shell脚本批量插入数据到MySQL中》](https://typecodes.com/linux/batchinsertmysqlshell1.html '查看原文') |
+
+
+### 2.6 synchronize目录
 
 | 日期        | 脚本文件           | 说明文档  |
 | :----: | :----: | :----: |
