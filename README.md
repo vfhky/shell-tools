@@ -50,6 +50,7 @@
 | 日期        | 脚本文件           | 说明文档  |
 | :----: | :----: | :----: |
 | 2020-04-15      | batchinsertmysqlshell1.sh | [《使用shell脚本批量插入数据到MySQL中》](https://typecodes.com/linux/batchinsertmysqlshell1.html '查看原文') |
+| 2020-08-03      | exportmysqlshell1.sh | [《使用shell脚本导出MySql查询的月表数据到EXCEL中》](https://typecodes.com/linux/exportmysqlshell1.html '查看原文') |
 
 
 ### 2.6 synchronize目录
