@@ -16,22 +16,28 @@
 | 2015-06-30 | typecodes_backup.sh      |    [《2015博客升级记(八)：CentOS7定时备份博客程序的shell脚本》](https://typecodes.com/linux/centos7blogregularbackup.html '查看原文') |
 | 2015-06-29      | mysql_backup.sh | [《2015博客升级记(七)：CentOS7定时备份MySql的shell脚本》](https://typecodes.com/linux/centos7mysqlregularbackup.html '查看原文') |
 
+### 2.2 cache目录
 
-### 2.2 datehandle目录
+| 日期        | 脚本文件           | 说明文档  |
+| :----: | :----: | :----: |
+| 2015-12-18      | readFileToSsdb1.sh      |   无 |
+
+
+### 2.3 datehandle目录
 
 | 日期        | 脚本文件           | 说明文档  |
 | :----: | :----: | :----: |
 | 2017-06-15      | alldateduringtwodays1.sh | [《shell遍历输出两个日期范围内所有的日期》](https://typecodes.com/linux/alldateduringtwodays1.html '查看原文') |
 
 
-### 2.3 dns目录
+### 2.4 dns目录
 
 | 日期        | 脚本文件           | 说明文档  |
 | :----: | :----: | :----: |
 | 2019-06-01      | aliyun_dns_modify.py | [《脚本自动切换博客图片域名在阿里云的DNS解析》](https://typecodes.com/python/aliyundnsanalysis1.html '查看原文') |
 
 
-### 2.4 filehandle目录
+### 2.5 filehandle目录
 
 | 日期        | 脚本文件           | 说明文档  |
 | :----: | :----: | :----: |
@@ -45,7 +51,7 @@
 | 2016-06-18      | handle_makefile.sh | [《使用sed命令批量处理Makefile文件的脚本》](https://typecodes.com/linux/handlemakefilebysed.html '查看原文') |
 
 
-### 2.5 mysql目录
+### 2.6 mysql目录
 
 | 日期        | 脚本文件           | 说明文档  |
 | :----: | :----: | :----: |
@@ -53,7 +59,7 @@
 | 2020-08-03      | exportmysqlshell1.sh | [《使用shell脚本导出MySql查询的月表数据到EXCEL中》](https://typecodes.com/linux/exportmysqlshell1.html '查看原文') |
 
 
-### 2.6 synchronize目录
+### 2.7 synchronize目录
 
 | 日期        | 脚本文件           | 说明文档  |
 | :----: | :----: | :----: |
