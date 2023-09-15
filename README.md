@@ -59,7 +59,14 @@
 | 2020-08-03      | exportmysqlshell1.sh | [《使用shell脚本导出MySql查询的月表数据到EXCEL中》](https://typecodes.com/linux/exportmysqlshell1.html '查看原文') |
 
 
-### 2.7 synchronize目录
+### 2.7 process目录
+
+| 日期        | 脚本文件           | 说明文档  |
+| :----: | :----: | :----: |
+| 2023-09-15      | stop.sh | [《通过进程名停止进程》](https://typecodes.com '查看原文') |
+
+
+### 2.8 synchronize目录
 
 | 日期        | 脚本文件           | 说明文档  |
 | :----: | :----: | :----: |
