@@ -17,15 +17,16 @@ fi
 appName="./"$1
 echo "==${appName}==="
 
-$(ps ux)
-pids=$(ps -ux | grep ${appName} | grep -Ev "grep|tail|less|update| Dl " | awk -F ' ' '{print $2}')
-echo "=== stop begin pids=["${pids}"] ==="
+ps ux
+#pids=$(ps ux |grep "${appName}" | grep -Ev "grep|tail|less|update| Dl " | awk -F ' ' '{print $2}')
+pids=$(pgrep -f "${appName}")
+echo "=== stop begin pids=[${pids}] ==="
 
 if [ -n "$pids" ]; then
     for pid in ${pids}
     do
-        echo "=== stop ok pid=["${pid}"] ==="
-        kill ${pid}
+        echo "=== stop ok pid=[${pid}] ==="
+        kill "${pid}"
     done
 fi
-echo "=== stop end pids=["${pids}"] ==="
+echo "=== stop end pids=[${pids}] ==="
