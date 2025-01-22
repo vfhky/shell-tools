@@ -66,7 +66,7 @@ def main():
     dbCon = dbInit()
     redisConn = redisInit()
     try:
-        update_user(dbCon.cursor(), uid)
+        update_user(dbCon.cursor(), redisConn, uid)
         print "========success=========="
     finally:
         dbClose(dbCon)
